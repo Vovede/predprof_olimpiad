@@ -7,16 +7,13 @@ cursor = conn.cursor()
 def query(data):
     lst = []
     minn = 0
-    cursor.execute("""SELECT * FROM stations;""")
+    cursor.execute("""SELECT * FROM stations""")
     res1 = cursor.fetchall()
     # for i in res1:
     #     lst.append(i[-2])
     # minn = min(lst)
 
-    cursor.execute(
-        f"""SELECT * FROM stations
-            WHERE temperature={minn};"""
-    )
+    cursor.execute(f"""SELECT * FROM stations WHERE temperature={minn};""")
     # res = cursor.fetchone()
     # res = cursor.fetchmany(5)
     res = cursor.fetchall()
