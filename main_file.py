@@ -1,5 +1,4 @@
-import db_add
-import db_query
+from database import db_query, db_add
 
 data = (1970, 1, 1)
 db_query.query(data)
