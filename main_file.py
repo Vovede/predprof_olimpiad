@@ -14,4 +14,3 @@ for s in f.readlines():
     counter += 1
 print(*data[:10], sep="\n")
 
-
