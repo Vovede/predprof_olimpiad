@@ -17,3 +17,4 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS stations(
                 humidity REAL);"""
                )
 conn.commit()
+
