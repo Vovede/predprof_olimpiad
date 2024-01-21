@@ -21,9 +21,6 @@ y = cursor.fetchall()
 print(len(x), x)
 print(len(y), y)
 
-
-
-
 plt.plot(x, y)
 plt.show()
 
