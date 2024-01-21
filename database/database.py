@@ -18,4 +18,3 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS stations(
                )
 conn.commit()
 
-
