@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('bd.db')
+conn = sqlite3.connect('../bd.db')
 cursor = conn.cursor()
 
 # запись, год, месяц, день, час, напр ветра, осадки, темпер-ра, влажность
