@@ -30,3 +30,4 @@ def add_inf(counter, temp):
         float(temp[-15]))
     )
     conn.commit()
+
