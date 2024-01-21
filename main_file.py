@@ -13,3 +13,4 @@ for s in f.readlines():
     db_add.add_inf(counter, temp)
     counter += 1
 print(*data[:10], sep="\n")
+
