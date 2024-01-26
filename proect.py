@@ -16,12 +16,12 @@ class Monitoringiop(QMainWindow):
         self.sef = None
 
         self.navTab = {
-            'q': [self.btnDownloadTab.clicked.connect(self.navigate), 1],
-            'e': [self.btnVisualTab.clicked.connect(self.navigate), 2],
-            'b': [self.btnAnalizeTab.clicked.connect(self.navigate), 3],
-            'y': [self.btnPredictTab.clicked.connect(self.navigate), 4],
-            'get': [self.btnMonitoringTab.clicked.connect(self.navigate), 5],
-            'rt': [self.btnExportTab.clicked.connect(self.navigate), 6]
+            'Загрузка данных': [self.btnDownloadTab.clicked.connect(self.navigate), 1],
+            'Визуализация данных': [self.btnVisualTab.clicked.connect(self.navigate), 2],
+            'Анализ данных': [self.btnAnalizeTab.clicked.connect(self.navigate), 3],
+            'Прогноз': [self.btnPredictTab.clicked.connect(self.navigate), 4],
+            'Мониторинг': [self.btnMonitoringTab.clicked.connect(self.navigate), 5],
+            'Экспорт': [self.btnExportTab.clicked.connect(self.navigate), 6]
         }
 
         self.downloadFileData.clicked.connect(self.loadTable)
@@ -34,8 +34,8 @@ class Monitoringiop(QMainWindow):
         self.homeBtnMonitoringtab.clicked.connect(self.homeGo)
 
     def navigate(self):
-        print(self.sender().text(), self.navTaD[self.sender().text()][1])
-        self.tabWiget.setCurrentIndex(self.sender().text()[1])
+        print(self.sender().text(), self.navTab[self.sender().text()][1])
+        self.tabWidget.setCurrentIndex(self.navTab[self.sender().text()][1])
 
     def homeGo(self):
         self.tabWidget.setCurrentIndex(0)
