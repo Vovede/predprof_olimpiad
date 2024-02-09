@@ -1,0 +1,22 @@
+self.downloadFileData.clicked.connect(self.zagruzka)
+
+    def zagruzka(self):
+        # Зададим тип базы данных
+        db = QSqlDatabase.addDatabase('QSQLITE')
+        # Укажем имя базы данных
+        db.setDatabaseName('bd13.sqlite')
+        # И откроем подключение
+        db.open()
+        # QTableView - виджет для отображения данных из базы
+        # Создадим объект QSqlTableModel,
+        # зададим таблицу, с которой он будет работать,
+        #  и выберем все данные
+        # model = QSqlTableModel(self, db)
+        model = QSqlTableModel(self)
+        model.setTable('stations')
+        model.select()
+        # model.select()
+        self.tableWidget.setModel(model)
+ 
+ 
+ 
