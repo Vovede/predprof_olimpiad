@@ -1,13 +1,15 @@
 import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import *
-
+from matplotlib.figure import Figure
+import random
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 # from fileDataRead import *
 
 class Monitoringiop(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('pytpyt (1).txt', self)
+        uic.loadUi('pytpyt.txt', self)
 
 
         self.totalData = {}
@@ -77,7 +79,48 @@ class Monitoringiop(QMainWindow):
         print('Прогноз')
 
     def fgert(self):
-        print('Экспорт')
+        # fig1 = plt.figure()
+        # fig1.set_size_inches(5, 2.550)
+        # x1 = [1, 2, 3, 4, 5, 45, 45, 23, 44, 56, 63, 23, 56]
+        # y1 = [25, 32, 34, 20, 25, 45, 45, 23, 45, 45, 34, 45, 47]
+        # er = plt.plot(x1, y1)
+
+        self.scene1 = QGraphicsScene()
+        self.graphicsView_3.setScene(self.scene1)
+        self.figure1 = Figure()
+        self.axes1 = self.figure1.gca()
+        self.axes1.set_title("My Plot")
+        x1 = [random.randrange(1, 2) for _ in range(10)]
+        y1 = [random.randrange(1, 10) for _ in range(10)]
+        self.axes1.clear()
+        self.axes1.plot(x1, y1)
+        self.canvas1 = FigureCanvas(self.figure1)
+        self.proxy_widgeter = self.scene1.addWidget(self.canvas1)
+
+        self.scene2 = QGraphicsScene()
+        self.graphicsView_2.setScene(self.scene2)
+        self.figure2 = Figure()
+        self.axes2 = self.figure2.gca()
+        self.axes2.set_title("My Plot")
+        x2 = [random.randrange(1, 14) for _ in range(10)]
+        y2 = [random.randrange(1, 14) for _ in range(10)]
+        self.axes2.clear()
+        self.axes2.plot(x2, y2)
+        self.canvas2 = FigureCanvas(self.figure2)
+        self.proxy_widgeter = self.scene2.addWidget(self.canvas2)
+
+        self.scene4 = QGraphicsScene()
+        self.graphicsView_4.setScene(self.scene4)
+        self.figure4 = Figure()
+        self.axes4 = self.figure4.gca()
+        self.axes4.set_title("My Plot")
+        x4 = [random.randrange(1, 14) for _ in range(5)]
+        y4 = [random.randrange(1, 14) for _ in range(5)]
+        self.axes4.clear()
+        self.axes4.plot(x4, y4)
+        self.canvas4 = FigureCanvas(self.figure4)
+        self.proxy_widgeter = self.scene4.addWidget(self.canvas4)
+
 
 
 if __name__ == '__main__':
